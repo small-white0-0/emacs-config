@@ -1,0 +1,13 @@
+# Compiled
+*.elc
+
+# Packaging
+.cask
+
+# Backup files
+*~
+
+/*
+!/lisp
+!/init.el
+!.gitignore
