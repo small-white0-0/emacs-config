@@ -118,6 +118,15 @@ ARGS is a list of feature symbols."
       "args isn't a list"
       :error)))
 
+(defun use-module/submodule-dir ()
+  "Get the submodule path.
+For example, when call `use-module/submodule-dir' in the packages module,\"`use-module-load-dir'/packages.el\",
+if \"`use-module-load-dir'/packages\" exists, return it, otherwise return nil."
+  (let ((path (file-name-sans-extension (file-current-filename))))
+    (if (file-exists-p path)
+        path
+      nil)))
+
 (defun file-current-filename ()
   "Return path to current file."
   (cond
